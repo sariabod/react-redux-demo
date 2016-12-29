@@ -6,3 +6,5 @@ export function formattedUsername(profiles) {
     };
   });
 }
+
+export const isEmpty = value => value === 'undefined' || value === 'null' || value == '';

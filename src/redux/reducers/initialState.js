@@ -3,9 +3,13 @@ export default {
       token: '',
       error: {},
       currentUser: {},
-      isAuthenticated: false,
-      isAuthenticating: false
+      isRequesting: false,
+      isAuthenticated: false
     },
-    profiles: [],
+    profiles: {
+      data: [],
+      error: {},
+      isRequesting: false
+    },
     ajaxCallsInProgress: 0
 };

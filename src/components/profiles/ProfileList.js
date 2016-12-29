@@ -4,7 +4,7 @@ import ProfileListCard from './ProfileListCard';
 const ProfileList = ({profiles}) => {
   return (
     <div className="row">
-      {profiles.map(profile => <ProfileListCard key={profile.id} profile={profile}/>)}
+      {profiles.map(profile => <ProfileListCard key={profile.uuid} profile={profile}/>)}
     </div>
   );
 };

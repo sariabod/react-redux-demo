@@ -1,13 +1,16 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import Header from '../components/common/Header';
 
 class AuthenticatedContainer extends React.Component {
-  render() {
+  componentDidMount() {
     const { isAuthenticated } = this.props;
 
-    if (! isAuthenticated) return false;
+    if (! isAuthenticated) browserHistory.push('login');
+  }
 
+  render() {
     return (
       <div>
         {this.props.children}

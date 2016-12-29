@@ -1,6 +1,10 @@
 import * as types from './actionTypes';
+import { CALL_API } from '../../middlewares/api';
 import profileApi from '../../api/mockProfileApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import {
+  PROFILES_REQUEST, PROFILES_SUCCESS, PROFILES_FAILURE
+} from '../../constants';
 
 export function loadProfilesSuccess(profiles) {
     return { type: types.LOAD_PROFILES_SUCCESS, profiles };
@@ -15,16 +19,14 @@ export function updateProfileSuccess(profile) {
 }
 
 export function loadProfiles() {
-    return function(dispatch) {
-        dispatch(beginAjaxCall());
-
-        return profileApi.getAllProfiles().then(profiles => {
-            dispatch(loadProfilesSuccess(profiles));
-        }).catch(error => {
-            dispatch(ajaxCallError(error));
-            throw(error);
-        });
-    };
+  return {
+    [CALL_API]: {
+      method: 'get',
+      authenticated: true,
+      endpoint: 'profiles',
+      types: [PROFILES_REQUEST, PROFILES_SUCCESS, PROFILES_FAILURE]
+    }
+  };
 }
 
 export function saveProfile(profile) {

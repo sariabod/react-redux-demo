@@ -12,7 +12,8 @@ import './styles/styles.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
 const store = configureStore();
-store.dispatch(loadProfiles());
+//console.log('LoadProfiles: ', loadProfiles());
+//store.dispatch(loadProfiles());
 
 render(
     <Provider store={store}>

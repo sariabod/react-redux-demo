@@ -46,6 +46,8 @@ class Login extends Component {
         Object.keys(error).map(key => errorMessage.push(error[key][0]));
       }
 
+      console.log('ErrorMessage: ', errorMessage);
+
       if (errorMessage.length == 0) return false;
       toastr.error(errorMessage.join('<br/>'));
     }
@@ -60,10 +62,6 @@ class Login extends Component {
     this.props.actions.authenticateUser(this.state.credentials)
       .then(() => {
         this.redirect();
-      })
-      .catch(response => {
-        this.renderErrors();
-        this.setState({submitting: false});
       });
   }
 
@@ -79,10 +77,14 @@ class Login extends Component {
   }
 
   redirect() {
-    this.setState({submitting: false});
-    toastr.success('Login successful.');
+    let { isAuthenticated } = this.props.auth;
 
-    browserHistory.push('/profiles');
+    this.setState({submitting: false});
+
+    if (isAuthenticated) {
+      toastr.success('Login successful.');
+      browserHistory.push('/profiles');
+    }
   }
 
   render() {
@@ -115,7 +117,10 @@ Login.contextTypes = {
 function mapStateToProps(state, ownProps) {
   let credentials = {email: '', password: ''};
 
+  console.log('State: ', state);
+
   return {
+    state: state,
     auth: state.auth,
     credentials: credentials
   };

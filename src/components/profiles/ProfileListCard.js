@@ -9,8 +9,8 @@ const ProfileListCard = ({profile}) => {
         <img src={avatarPlaceholder} alt={profile.avatar}/>
         <div className="caption">
           <h3>
-            <Link to={'/profile/' + profile.id}>
-              {profile.firstName + ' ' + profile.lastName}
+            <Link to={'/profile/' + profile.uuid}>
+              {profile.username}
             </Link>
           </h3>
           <small className="text-center">{profile.location}</small>
