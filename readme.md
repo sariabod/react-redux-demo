@@ -1,6 +1,6 @@
-# React Redux Demo
+# react-redux-demo
 
-Demo seed to test react-redux
+demo seed to test react-redux
 
 ## Requirements
 
