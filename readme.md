@@ -1,12 +1,6 @@
-# Wall Of Fame - React Client
+# React Redux Demo
 
-[![Build Status](https://travis-ci.org/DerrickJames/wall-of-fame-react.svg)](https://travis-ci.org/DerrickJames/wall-of-fame-react)
-
-This is the client-side implementation of the Wall Of Fame project using React. It is meant to be a playground to test out different ideas and approaches
-gathered over time as a software developer from various books, articles,
-tutorials and experiences on large scale system architectures,
-design patterns, best practices and generally the way I think about elegant
-code.
+Demo seed to test react-redux
 
 ## Requirements
 
@@ -15,12 +9,11 @@ code.
 
 ## Installation
 
-This client-side app uses a separate back-end api.
-Install the Laravel back-end api found at, `https://github.com/DerrickJames/wall-of-fame-api`
+This client-side app requires a separate back-end api integration.
 
 ```bash
-$ git clone https://github.com/DerrickJames/wall-of-fame-react.git
-$ cd wall-of-fame-react && npm i
+$ git clone https://github.com/sariabod/react-redux-demo.git
+$ cd react-redux-demo && npm i
 ```
 
 To run the development app version
