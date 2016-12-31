@@ -34,12 +34,4 @@ MainLayout.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
-  return {
-    loading: state.ajaxCallsInProgress > 0,
-    currentUser: state.auth.currentUser,
-    isAuthenticated: state.auth.isAuthenticated
-  };
-}
-
-export default connect(mapStateToProps)(MainLayout);
+export default MainLayout;

@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <HomeHeader loading={this.props.loading}/>
+        <HomeHeader/>
 
         <div className="">
           {this.props.children}
@@ -22,24 +22,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired
+  children: PropTypes.object.isRequired
 };
 
-function manageBodyElementBackground(ownProps) {
-  const bodyElement = document.getElementById('main-body');
-
-  (ownProps.location.pathname.length > 1) ?
-    bodyElement.classList.add('body-default') :
-    bodyElement.classList.remove('body-default');
-}
-
-function mapStateToProps(state, ownProps) {
-  manageBodyElementBackground(ownProps);
-
-  return {
-    loading: state.ajaxCallsInProgress > 0
-  };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

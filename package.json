@@ -1,12 +1,12 @@
 {
-  "name": "wall-of-fame-react",
+  "name": "react-redux-demo",
   "version": "0.1.0",
-  "description": "Wall Of Fame client side implementation with react and redux",
+  "description": "Demo presentation to showcase React with Redux in practice",
   "author": "Mushangi Derrick",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DerrickJames/wall-of-fame-react"
+    "url": "https://github.com/sariabod/react-redux-demo"
   },
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
